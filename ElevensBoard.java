@@ -125,15 +125,18 @@ public class ElevensBoard extends Board {
 				found = true;
 			}
 			}
+			if (found == false){
 			found = false;
+		}
 	for (int q =  0; q < selectedCards.size(); q++){
 		int i = selectedCards.get(q);
 		if (Cards[i].getRank() == ("Queen")){
 			found = true;
-
 		}
 	}
+	if (found == false){
 	found = false;
+}
 	for (int k = 0; k < selectedCards.size(); k++){
 		int i = selectedCards.get(k);
 		if (Cards[i].getRank() == ("King")){
