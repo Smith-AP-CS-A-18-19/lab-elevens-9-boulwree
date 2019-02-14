@@ -54,6 +54,13 @@ public class ElevensBoard extends Board {
 	@Override
 	public boolean isLegal(List<Integer> selectedCards) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+		if(containsPairSum11(selectedCards)){
+			return true;
+		}
+		if(containsJQK(selectedCards)){
+			return true;
+		}
+		return false;
 	}
 
 	/**
@@ -67,6 +74,13 @@ public class ElevensBoard extends Board {
 	@Override
 	public boolean anotherPlayIsPossible() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+		if(containsPairSum11(cardIndexes())){
+			return true;
+		}
+		if(containsJQK(cardIndexes())){
+			return true;
+		}
+		return false;
 	}
 
 	/**
@@ -79,6 +93,19 @@ public class ElevensBoard extends Board {
 	 */
 	private boolean containsPairSum11(List<Integer> selectedCards) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+		for (int i = 0; i < selectedCards.size(); i++){
+			for (int j = 0; j < selectedCards.size(); j++){
+				if (selectedCards.get(i).pointValue + selectedCards.get(j).pointValue == 11){
+					return true;
+				}
+			}
+			return false;
+		}
+		//for each cards
+			//for each card
+				//if(cards add to 11){
+				//return true
+			//} return false
 	}
 
 	/**
@@ -91,5 +118,37 @@ public class ElevensBoard extends Board {
 	 */
 	private boolean containsJQK(List<Integer> selectedCards) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+		boolean found = false;
+		for (int j = 0; j < selectedCards.size(); j++){
+			int i = selectedCards.get(j);
+			if (Cards[i].getRank() == ("Jack")){
+				found = true;
+			}
+			}
+			found = false;
+	for (int q =  0; q < selectedCards.size(); q++){
+		int i = selectedCards.get(q);
+		if (Cards[i].getRank() == ("Queen")){
+			found = true;
+		}
+	}
+	found = false;
+	for (int k = 0; k < selectedCards.size(); k++){
+		int i = selectedCards.get(k);
+		if (Cards[i].getRank() == ("King")){
+			found = true;
+		}
+	}
+	found = false;
+		//found = false
+		//for each card
+			//if(jack)
+				//found = true;
+				//}
+				//}
+			//if !found{
+			// return false;
+		//found = false
+		//repeat
 	}
 }
