@@ -130,6 +130,7 @@ public class ElevensBoard extends Board {
 		int i = selectedCards.get(q);
 		if (Cards[i].getRank() == ("Queen")){
 			found = true;
+
 		}
 	}
 	found = false;
@@ -139,7 +140,7 @@ public class ElevensBoard extends Board {
 			found = true;
 		}
 	}
-	found = false;
+	return found;
 		//found = false
 		//for each card
 			//if(jack)
